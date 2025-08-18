@@ -1,0 +1,79 @@
+// Enter your code below the lines of the families' information
+
+// Secret knowledge of the Zhang family:
+namespace zhang
+{
+    int bank_number_part(int secret_modifier)
+    {
+        int zhang_part{8'541};
+        return (zhang_part * secret_modifier) % 10000;
+    }
+    namespace red
+    {
+        int code_fragment() { return 512; }
+    } // namespace red
+    namespace blue
+    {
+        int code_fragment() { return 677; }
+    } // namespace blue
+} // namespace zhang
+
+// Secret knowledge of the Khan family:
+namespace khan
+{
+    int bank_number_part(int secret_modifier)
+    {
+        int khan_part{4'142};
+        return (khan_part * secret_modifier) % 10000;
+    }
+    namespace red
+    {
+        int code_fragment() { return 148; }
+    } // namespace red
+    namespace blue
+    {
+        int code_fragment() { return 875; }
+    } // namespace blue
+} // namespace khan
+
+// Secret knowledge of the Garcia family:
+namespace garcia
+{
+    int bank_number_part(int secret_modifier)
+    {
+        int garcia_part{4'023};
+        return (garcia_part * secret_modifier) % 10000;
+    }
+    namespace red
+    {
+        int code_fragment() { return 118; }
+    } // namespace red
+    namespace blue
+    {
+        int code_fragment() { return 923; }
+    } // namespace blue
+} // namespace garcia
+namespace estate_executor
+{
+    // Enter your code below
+    int assemble_account_number(int secret_modifier)
+    {
+        // Assemble the account number from the family secrets
+        return zhang::bank_number_part(secret_modifier) * 10000 +
+               khan::bank_number_part(secret_modifier) * 100 +
+               garcia::bank_number_part(secret_modifier);
+    }
+
+    int assemble_code()
+    {
+        // Assemble the final code from the family secrets
+        return zhang::red::code_fragment() * 1000000 +
+               khan::red::code_fragment() * 10000 +
+               garcia::red::code_fragment() * 100 +
+               zhang::blue::code_fragment() * 1000 +
+               khan::blue::code_fragment() * 10 +
+               garcia::blue::code_fragment();
+    }
+}
+
+
