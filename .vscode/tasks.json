@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build & Run tests (g++)",
+      "type": "shell",
+      "command": "g++ -std=c++17 -I test lasagna.cpp test/lasagna_test.cpp test/tests-main.cpp -o build/lasagna-tests && build/lasagna-tests",
+      "options": { "cwd": "${workspaceFolder}/cpp/lasagna" },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake: configure, build, test",
+      "type": "shell",
+      "command": "cmake -S . -B build && cmake --build build && ctest --test-dir build --output-on-failure",
+      "options": { "cwd": "${workspaceFolder}/cpp/lasagna" }
+    }
+  ]
+}

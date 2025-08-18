@@ -3,7 +3,7 @@
 #include <catch2/catch.hpp>
 #else
 #include "test/catch.hpp"
-#endif
+//#endif
 
 using namespace std;
 
@@ -13,8 +13,6 @@ TEST_CASE("Preparation time correct", "[task_1]") {
 
     REQUIRE(expected == actual);
 }
-
-#if defined(EXERCISM_RUN_ALL_TESTS)
 
 TEST_CASE("Fresh in the oven", "[task_2]") {
     int timeSpendInOven = 0;
@@ -71,5 +69,8 @@ TEST_CASE("One minute left, 5 layers!", "[task_4]") {
 
     REQUIRE(expected == actual);
 }
+
+//#if defined(EXERCISM_RUN_ALL_TESTS)
+
 
 #endif
