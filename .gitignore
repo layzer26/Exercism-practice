@@ -43,3 +43,7 @@ build.ninja
 # Windows executables
 *.exe
 
+#Exercism 
+.Exercism
+
+

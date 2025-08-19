@@ -58,8 +58,14 @@ namespace estate_executor
     // Enter your code below
     int assemble_account_number(int secret_modifier)
     {
+
         // Assemble the account number from the family secrets
         return zhang::bank_number_part(secret_modifier)  +
+=======
+
+
+        return zhang::bank_number_part(secret_modifier) +
+
                khan::bank_number_part(secret_modifier) +
                garcia::bank_number_part(secret_modifier);
     }
@@ -74,6 +80,18 @@ namespace estate_executor
                (zhang::blue::code_fragment() +
                khan::blue::code_fragment()  +
                garcia::blue::code_fragment());
+
+
+        return( zhang::red::code_fragment()  +
+               khan::red::code_fragment()  +
+               garcia::red::code_fragment() ) 
+               *
+               (zhang::blue::code_fragment() +
+               khan::blue::code_fragment()  +
+               garcia::blue::code_fragment() );
+        
+
+
     }
 }
 
