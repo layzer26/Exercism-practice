@@ -53,13 +53,12 @@ namespace garcia
         int code_fragment() { return 923; }
     } // namespace blue
 } // namespace garcia
-
 namespace estate_executor
 {
     // Enter your code below
     int assemble_account_number(int secret_modifier)
     {
-
+        // Assemble the account number from the family secrets
         return zhang::bank_number_part(secret_modifier) * 10000 +
                khan::bank_number_part(secret_modifier) * 100 +
                garcia::bank_number_part(secret_modifier);
@@ -67,14 +66,14 @@ namespace estate_executor
 
     int assemble_code()
     {
-        /*int red_sum = zhang::red::code_fragment() * 1000000 +
-                      khan::red::code_fragment() * 10000 +
-                      garcia::red::code_fragment() * 100;
-
-        int blue_sum = zhang::blue::code_fragment() * 1000 +
-                       khan::blue::code_fragment() * 10 +
-                       garcia::blue::code_fragment();
-*/
-        return 1925550;
+        // Assemble the final code from the family secrets
+        return zhang::red::code_fragment() * 1000000 +
+               khan::red::code_fragment() * 10000 +
+               garcia::red::code_fragment() * 100 +
+               zhang::blue::code_fragment() * 1000 +
+               khan::blue::code_fragment() * 10 +
+               garcia::blue::code_fragment();
     }
 }
+
+
