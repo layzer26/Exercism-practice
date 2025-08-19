@@ -60,21 +60,19 @@ namespace estate_executor
     int assemble_account_number(int secret_modifier)
     {
 
-        return zhang::bank_number_part(secret_modifier) * 10000 +
-               khan::bank_number_part(secret_modifier) * 100 +
+        return zhang::bank_number_part(secret_modifier) +
+               khan::bank_number_part(secret_modifier) +
                garcia::bank_number_part(secret_modifier);
     }
 
     int assemble_code()
     {
-        /*int red_sum = zhang::red::code_fragment() * 1000000 +
-                      khan::red::code_fragment() * 10000 +
-                      garcia::red::code_fragment() * 100;
-
-        int blue_sum = zhang::blue::code_fragment() * 1000 +
-                       khan::blue::code_fragment() * 10 +
-                       garcia::blue::code_fragment();
-*/
-        return 1925550;
+        return( zhang::red::code_fragment()  +
+               khan::red::code_fragment()  +
+               garcia::red::code_fragment() ) *
+               (zhang::blue::code_fragment() +
+               khan::blue::code_fragment()  +
+               garcia::blue::code_fragment() );
+        
     }
 }
