@@ -9,5 +9,4 @@ build:
 test: build
 	ctest --test-dir build --output-on-failure
 
-clean:
-	-@cmake -E rm -rf build
+
